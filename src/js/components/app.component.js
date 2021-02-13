@@ -14,12 +14,8 @@ export class AppComponent extends React.Component{
                 <Router>
                     <HeaderComponent/>
                         <Switch>
-                            <Route exact path="/">
-                                <HomePageComponent/>
-                            </Route>
-                            <Route path="*">
-                                <NoMatchPageComponent/>
-                            </Route>
+                            <Route exact path="/" component={HomePageComponent} />                       
+                            <Route path="*" component={NoMatchPageComponent} />              
                         </Switch>
                     <FooterComponent/>
                 </Router>

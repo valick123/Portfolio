@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
 
 export class HeaderComponent extends React.Component{
@@ -7,7 +8,17 @@ export class HeaderComponent extends React.Component{
             <Container>
                 <Row>
                     <Col md={12}>
-                        header text
+                        <ul>
+                            <li>
+                                <Link to="/">Home</Link>
+                            </li>
+                            <li>
+                                <Link to="/gallery">Gallery</Link>
+                            </li>
+                            <li>
+                                <Link to="/contact">Contacts Us</Link>
+                            </li>
+                        </ul>
                     </Col>
                 </Row>
             </Container>
