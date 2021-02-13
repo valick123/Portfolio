@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    overflow-x: hidden;
+}
+
+html,
+body {
+    
+    height: 100%;
+
+
+    & .app {
+        padding: 0;
+        display: flex;
+        min-height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+
+        & .main {
+            flex-grow: 1;
+        }
+
+
+        & .content {
+            max-width: 1020px;
+            margin: 0 auto;
+            padding: 0 10px;
+
+        }
+    }
+}
