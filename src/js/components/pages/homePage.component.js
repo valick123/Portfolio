@@ -1,14 +1,376 @@
-import { Divider, Typography } from '@material-ui/core';
-import React from 'react';
+import { Box, Button, ButtonGroup, LinearProgress, Container, Divider, Grid, IconButton, Link, List, ListItem, ListItemText, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@material-ui/core';
+import React, { useEffect } from 'react';
+import MyPhoto from "../../images";
+import { makeStyles} from "@material-ui/core/styles" 
+import {connect} from 'react-redux';
+import Iframe from 'react-iframe';
+import PhoneIcon from '@material-ui/icons/Phone';
+import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {fab} from "@fortawesome/free-brands-svg-icons"
+import {library} from '@fortawesome/fontawesome-svg-core';
 
-export class HomePageComponent extends React.Component{
-    render(){
-        return(           
-            <>
-             <Typography>homePageText</Typography> 
-             <Divider/>
-            <Typography>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum enim mollitia natus ratione fuga deleniti unde neque amet, cupiditate voluptas praesentium tempora! Temporibus minus labore modi, incidunt sequi excepturi minima impedit quam nihil vel id animi culpa optio voluptas eum similique, soluta vero reprehenderit autem illum. Consectetur repellat ducimus in quod consequuntur animi fugiat laudantium, deserunt vitae hic aut assumenda molestiae voluptas magnam nisi eos perferendis sit neque! Aperiam dolores maxime quae voluptas, similique blanditiis eaque perspiciatis consequuntur unde quo soluta veritatis explicabo quia? Ipsa, error. Placeat corrupti eveniet ut ex quibusdam, omnis earum commodi aspernatur iste. Illum eos voluptates ipsum quaerat praesentium. Eligendi temporibus illo itaque expedita. Corrupti maxime accusantium quo ea? Deserunt, enim delectus? Fuga, fugiat neque ex nostrum asperiores eaque officiis nam sunt modi voluptates maxime ut nulla quasi numquam odio rem consequatur reiciendis, mollitia repellendus voluptas accusantium illo delectus cupiditate! Explicabo esse velit atque asperiores sit doloribus fugiat. In, similique consequuntur? Necessitatibus quae ducimus earum libero, optio voluptas error, pariatur magnam accusantium officia fuga iusto magni, blanditiis ab ullam facilis dolore voluptate doloribus! Dicta voluptatibus voluptatum voluptates ipsam maxime, incidunt dolore explicabo eum libero est suscipit sunt eveniet adipisci nam impedit, autem molestias dolores necessitatibus. Ipsam eligendi libero dicta. Necessitatibus inventore blanditiis saepe? Enim facere itaque illum nulla nisi consectetur, pariatur cupiditate repellat rem tempora totam laboriosam dolor, est amet maiores repellendus distinctio, laudantium tenetur! Fugit maiores ad nobis, tempore quia id quam eos deleniti alias nemo et corporis ipsa sequi molestias quibusdam obcaecati voluptas, voluptatum corrupti repellendus nam! Itaque fugiat ratione iste, libero vitae rerum, deleniti soluta, sequi ad officia eius minus commodi? Eos reiciendis expedita perferendis assumenda fugiat, eveniet minima temporibus iste eligendi totam quasi repellendus soluta, deserunt, nulla recusandae nam ad tenetur adipisci earum numquam quis quos sunt? Ullam dicta earum possimus hic est autem alias nemo amet iure reprehenderit corrupti illo et enim eligendi, fuga dolores consequatur natus a tempora explicabo velit! Inventore debitis qui quidem, vel harum maxime esse obcaecati impedit quis. Eius recusandae aspernatur totam ullam aliquid blanditiis doloribus architecto voluptas soluta facilis possimus beatae nobis, omnis harum odio odit culpa eos impedit libero expedita suscipit. Molestias eius voluptates, alias, repudiandae sequi omnis unde fugiat, rerum suscipit libero odio repellendus. Sunt, molestiae! Excepturi, quasi? Numquam officiis, adipisci tenetur delectus ad illum eligendi ipsum nostrum similique voluptate tempora nam architecto at quis nobis eum repellendus explicabo optio. Asperiores, modi? Esse laudantium mollitia illum blanditiis voluptatum maiores tenetur officia distinctio ipsam a perferendis ad eligendi asperiores, et nemo earum placeat nostrum necessitatibus? Asperiores harum magni culpa neque natus aperiam. Accusamus, reiciendis. Vero, iste odit dolores ipsum inventore dolorem voluptatum placeat, illo, aliquam explicabo cumque fugiat. Fugiat architecto excepturi placeat error esse, rem dolore eveniet deleniti repudiandae nemo, vitae quidem. Hic in commodi aliquam odit perferendis, voluptatibus veritatis reiciendis facilis expedita repudiandae rerum consequuntur ut dolorem eaque ipsa molestiae ratione! Tempore mollitia deserunt nobis? Ducimus ipsum tenetur aspernatur maxime asperiores voluptas dolor eum enim doloremque delectus mollitia nemo molestiae sequi fugiat omnis, beatae similique vitae amet ipsam? Dolor repellendus provident possimus recusandae voluptates quam culpa ipsam reprehenderit pariatur, quis assumenda fuga rerum quas sequi inventore saepe, nemo at? Saepe suscipit animi odio ratione totam, dolores voluptates adipisci. Mollitia temporibus quae animi qui quidem odit possimus est neque impedit fugit, id dolores ullam officia pariatur iste et nemo reprehenderit! Quis officiis eius fugit pariatur nesciunt hic corporis magnam, quia, eos consequatur laudantium natus fuga reprehenderit neque dignissimos odit. Omnis quis veniam magnam qui repellendus esse rem sapiente amet quas voluptatem illo deleniti a, repellat quaerat porro pariatur nemo quae! Voluptatem corrupti quas ipsa sint facere. At, laboriosam? Odit quis nesciunt quas aliquid provident iste repellendus sunt pariatur! Possimus sunt est ipsum omnis, ex, ea reiciendis alias nemo quis voluptate illum, numquam minus ducimus dolor qui dolorem. Id, earum fuga vel suscipit optio magnam expedita obcaecati aliquid similique temporibus praesentium labore distinctio voluptatem ducimus vero cumque vitae. Obcaecati deleniti qui quae recusandae? Eveniet vel accusantium cum eaque nihil, maxime, sequi explicabo, quod pariatur expedita nostrum iusto ratione tenetur adipisci a repellat reiciendis deleniti alias quis. Dolor voluptas quibusdam, laborum in facilis nemo architecto, quas voluptatibus dicta, asperiores harum. Molestiae, aliquam quis? Fugiat fugit dignissimos deserunt beatae dolorem vero quas ab voluptatum, sit iste iure aliquam. Natus et facilis nemo alias hic voluptas numquam temporibus quisquam aliquid officiis ab quam officia cumque aspernatur inventore, illum fuga accusantium obcaecati, veritatis vitae recusandae repudiandae adipisci quod porro. Laborum quos maxime numquam quas, odit rerum ut obcaecati culpa quia debitis ipsum natus dolor necessitatibus earum! Dignissimos a quos eos aut omnis quisquam necessitatibus beatae tenetur in, reiciendis minus quis quaerat, eius nisi? Sit nulla dolor magni dicta dolorum. Autem, harum porro illum nesciunt quae corporis sapiente accusamus ad a nisi nemo nihil ducimus dolores atque asperiores temporibus nobis eos deserunt. Sit debitis nemo, doloremque, minima quia reiciendis qui id ipsam architecto, quo rerum quae ullam delectus totam voluptate itaque. Dolorum velit vel maiores quis odio. Praesentium beatae vero reprehenderit libero, doloremque quasi odit sed et corporis veritatis autem veniam doloribus repudiandae esse voluptatem pariatur dolore tempora inventore? Molestias eos modi consectetur? Adipisci voluptates dicta quidem delectus similique necessitatibus iste quisquam natus, asperiores quae libero et minima. Enim, accusantium. In architecto reprehenderit illo itaque eius aliquid amet quis, accusantium nostrum, consequatur debitis unde non sapiente sunt officia a qui. Quod aperiam, quasi nulla rem reprehenderit cum a sed fugit nisi corrupti delectus qui porro quos totam similique? Ratione, nesciunt modi? Architecto repellat molestias enim soluta cupiditate quia voluptas eligendi ut deserunt, incidunt asperiores fugit ab libero in ducimus ad aliquid, voluptatibus illum amet! Vitae, assumenda. Cupiditate error doloribus minima aliquid repellat? Nesciunt iure quidem praesentium velit dolores vero numquam ea, expedita necessitatibus inventore, laboriosam accusamus. Repudiandae quisquam cumque iusto, deserunt explicabo eaque necessitatibus sunt culpa ab blanditiis maxime voluptates, quas optio repellat eligendi est! Alias quos, vero error velit animi in illo impedit est fugit fugiat vitae et vel sapiente maiores voluptates voluptatum iure iste officiis temporibus. Facilis amet, exercitationem sequi aspernatur quae quos, dolorum odio odit totam mollitia in doloribus ea voluptatum officiis, qui nam sit veniam dolore deleniti laboriosam. Necessitatibus aut, provident rerum repudiandae, nostrum cum impedit enim sunt voluptates, voluptatum dolor dolore nobis alias error eaque magnam perferendis esse! At debitis laboriosam, perferendis vel cum laudantium repudiandae soluta in aliquid adipisci quibusdam, possimus, maxime a aperiam tenetur error deleniti reprehenderit quam labore eum odit sit dolore architecto esse? Architecto corporis quas voluptatibus pariatur necessitatibus ducimus magnam, nostrum eaque quos ea vel ut aliquid atque vitae assumenda nesciunt earum, repellendus debitis voluptas sit ullam delectus! Nostrum modi sint nemo corrupti ratione impedit, fugiat iusto deleniti suscipit, veritatis labore aliquid harum illum tempora iure nobis quia accusantium libero aut dolorum eaque? Est quae explicabo dolores pariatur quidem quibusdam similique maxime quisquam ducimus exercitationem ut quasi veniam quos neque assumenda reiciendis alias, corporis doloribus sed in minus recusandae minima veritatis. Hic, nobis incidunt, temporibus similique dolor veniam vel amet praesentium laboriosam fugit ratione laudantium delectus. Dolor tempore delectus quos numquam rem dicta, quod laborum temporibus quae laboriosam est! Non, veniam assumenda? Voluptatibus deleniti est animi ullam laborum ipsam expedita, alias cupiditate illum nulla officiis odio tenetur, totam doloremque odit exercitationem, quidem hic? Magni hic eius omnis vitae iure voluptate, corrupti officiis, nesciunt dolores, quod ad maxime architecto corporis consequuntur? Similique deleniti sunt natus nisi adipisci sequi dignissimos repudiandae repellendus minus, est quidem, nostrum assumenda. Omnis sequi sit maiores odit cupiditate. Cumque nam iusto numquam doloribus fugiat? Totam fugit necessitatibus, magnam numquam aut voluptates quam quasi, dolore dolores consectetur cupiditate suscipit provident omnis, obcaecati rem sit recusandae rerum nam aliquam blanditiis error maxime nemo eum fuga. Neque similique consequuntur incidunt quod praesentium nemo quos magni natus animi voluptas, vel illo, blanditiis, ducimus velit nam? Alias magnam sed placeat dolore maiores corrupti dolor repudiandae quo. Quidem officiis facilis consectetur repudiandae! Placeat quidem quae hic. Recusandae ipsa sint eum distinctio, reprehenderit architecto reiciendis blanditiis dolorem aut natus est assumenda laudantium alias dolores debitis quibusdam illo, illum officia officiis rerum? Nemo possimus, vel eius cum quasi nulla nostrum debitis dolor voluptatum facere tempora tempore maiores nihil natus porro totam dignissimos ex libero quia, odio, vero omnis! Eos sunt sed accusantium quibusdam quisquam nam mollitia saepe adipisci? Cumque totam animi tenetur, tempore minus sint earum, pariatur nisi aperiam nemo dolore ratione, autem unde aliquid iure eius blanditiis aliquam harum obcaecati incidunt mollitia eaque et expedita.</Typography>
-            </>            
-        )
+library.add(fab)
+
+const useStyles = makeStyles(theme =>({
+    avatar:{
+        maxWidth:"100%",
+        maxHeight:theme.breakpoints.values.sm,
+    },
+    avatarBox:{
+        display:"flex",
+        justifyContent:"center"
+    },
+    text:{
+        paddingTop:theme.spacing(2),
+        paddingBottom:theme.spacing(2),
+    },
+    tHead:{
+        backgroundColor:theme.palette.primary.dark,
+    },
+    tHeadText:{
+        color:theme.palette.primary.contrastText,
+    },
+    map:{
+        width:"100%",
+
+        minHeight:200,
+        ...theme.shape
+    },
+    btnGroup:{
+        [theme.breakpoints.down("xs")]:{            
+            display:"flex",
+            width:"100%"
+        }
+    },
+    grow:{
+        [theme.breakpoints.down('xs')]:{
+            flexGrow:1
+        }
+    },
+    fullWidthBtn:{
+        [theme.breakpoints.down('xs')]:{
+            width:"100%"
+        }
+    },
+    important:{
+        backgroundColor:theme.palette.error.main,
+        color:theme.palette.error.contrastText,
+        ...theme.shape,
+        padding:theme.spacing(1),
+        marginBottom:theme.spacing(2),
+        display:"inline-block"
+
     }
+}))
+
+ const HomePageComponent = props =>{
+    const [IsLoad, setIsLoad] = React.useState(true)
+
+    const classes = useStyles();
+    useEffect(()=>{
+        new Promise((resolve,reject)=>{
+            props.dispatch({
+                type:"DATA_LOADING"
+            })
+        })
+       .then(
+            fetch("http://localhost:3000/myInfo")
+            .then(responce => responce.json())
+            .then(data=> {
+                return props.dispatch({
+                    type:"INIT",
+                    payload:data
+                    })
+                }
+            )
+            .then(()=>{
+                setIsLoad(false)
+                props.dispatch({
+                    type:"DATA_LOADED"
+                })
+            })
+        )
+        
+    },[])
+
+const renderTable = () => {
+    return (<TableContainer component={Paper} square elevation={2}>
+            <Table>
+                <TableHead className={classes.tHead}>
+                    <TableRow>
+                        <TableCell align="left" colSpan="2">
+                            <Typography variant="h6" className={classes.tHeadText}>
+                                Short Info
+                            </Typography>                            
+                        </TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    <TableRow>
+                        <TableCell>
+                            <Typography variant="subtitle1" color="textSecondary">
+                                Name:
+                            </Typography>
+                        </TableCell>
+                        <TableCell>
+                            <Typography>
+                                {props.personalInfo.name}
+                            </Typography>                            
+                        </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>
+                            <Typography variant="subtitle1" color="textSecondary">
+                                Surname:
+                            </Typography>                            
+                        </TableCell>
+                        <TableCell>
+                            <Typography>
+                                {props.personalInfo.surname}
+                            </Typography>
+                            
+                        </TableCell>
+                    </TableRow>     
+                    <TableRow>
+                        <TableCell>
+                            <Typography variant="subtitle1" color="textSecondary">
+                                Age:
+                            </Typography>
+                            
+                        </TableCell>
+                        <TableCell>
+                            <Typography>
+                               {props.personalInfo.age} 
+                            </Typography>
+                            
+                        </TableCell>
+                    </TableRow>   
+                    <TableRow>
+                        <TableCell>
+                            <Typography variant="subtitle1" color="textSecondary">
+                                Sex:
+                            </Typography>
+                            
+                        </TableCell>
+                        <TableCell>
+                            <Typography>
+                                {props.personalInfo.gender}
+                            </Typography>
+                            
+                        </TableCell>
+                    </TableRow>  
+                    <TableRow>
+                        <TableCell>
+                            <Typography variant="subtitle1" color="textSecondary">
+                                Education:
+                            </Typography>                            
+                        </TableCell>
+                        <TableCell>
+                            <List>
+                                {props.personalInfo.education.map((item, index) =>(
+                                <ListItem key={index} disableGutters divider>
+                                    <ListItemText>
+                                        <Typography variant="body1">
+                                            {item.place}
+                                        </Typography>
+                                        <Typography variant="body1">
+                                            {item.period}
+                                        </Typography>
+                                    </ListItemText>                                    
+                                </ListItem>
+                            ))}
+                            </List>
+                            
+                        </TableCell>
+                    </TableRow> 
+                    <TableRow>
+                        <TableCell>
+                            <Typography variant="subtitle1" color="textSecondary">
+                                Skills:
+                            </Typography>                            
+                        </TableCell>
+                        <TableCell>
+                            <Typography  variant="body1" >
+                               {props.personalInfo.skills.join(', ')} 
+                            
+                            </Typography>
+                        </TableCell>
+                    </TableRow>                         
+                </TableBody>
+            </Table>
+         </TableContainer>
+         
+    )
 }
+
+const createSocialLinks = () =>{
+    return (
+            <Box marginBottom={2}>
+                <ButtonGroup color="secondary" size="medium" variant="contained" className={classes.btnGroup} >
+                    {
+                        props.personalInfo.socials.map((item,index)=>{
+                            const {link, icon} = item;
+                            return (
+                                <Button key={index} href={link} className={classes.grow} >
+                                    <FontAwesomeIcon icon={["fab",icon]} size="lg"/>
+                                </Button>
+                            )
+                        })
+                     }
+                </ButtonGroup>
+                
+            </Box>
+    )
+}
+const createAboutMe = () =>{
+    return(<Box >
+                {
+                    props.personalInfo.aboutMe.map((item,index) =>{
+                        const {text, flag} = item;
+                        return(
+                            
+                                flag == "strong"
+                                ?<Typography className={classes.important} component={flag} key={index} >{text.toUpperCase()}</Typography>
+                                :<Typography paragraph key={index}>{text}</Typography>
+                            
+                        )
+                    })
+                }
+                <Typography>
+                    My skills:
+                </Typography>
+                {
+                    props.personalInfo.skills.map((item, index)=>{
+                        return (
+                            <Typography key={index}>
+                                {`- ${item}`}
+                            </Typography>
+                        )
+                    })
+                }    
+            </Box>
+            
+    )
+}
+const renderContacts = () =>{
+    return (
+        <>
+            <Box  marginBottom={2}>
+                <Typography variant="h6" gutterBottom>
+                    Email:
+                </Typography>
+                <Button 
+                    href={`mailto:${props.personalInfo.Email}`}
+                    startIcon={<AlternateEmailIcon />}
+                    color="secondary"
+                    variant="contained"
+                    size="small"
+                    className={classes.fullWidthBtn}
+                >
+                    {props.personalInfo.Email}
+                </Button>
+            </Box>
+            <Box  marginBottom={2}>
+                <Typography variant="h6" gutterBottom>
+                    Phone number:
+                </Typography>
+                <Button
+                    href={`tel:${props.personalInfo.phoneNumber}`}
+                    startIcon={<PhoneIcon />}
+                    color="secondary"
+                    variant="contained"
+                    size="small"
+                    className={classes.fullWidthBtn}
+                >
+                    {props.personalInfo.phoneNumber}
+                </Button>
+            </Box>
+            <Box >
+                <Typography variant="h6" gutterBottom>
+                    Socials:
+                </Typography>
+                {createSocialLinks()}
+            </Box>
+            <Box >
+                <Typography variant="h6" gutterBottom>
+                    Location:
+                </Typography>
+                <Iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1174.3536667223639!2d27.580030783709592!3d53.936943180285645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcf6e354036cb%3A0x43d37ca7115c1332!2sBogdanovicha%20Maksima%20155%2C%20Minsk!5e0!3m2!1sen!2sby!4v1613641427105!5m2!1sen!2sby" 
+                        className={classes.map}
+                        frameBorder="0" 
+                        allowFullScreen="" 
+                        aria-hidden="false" 
+                        tabIndex="0"
+                    />
+            </Box>
+        </>
+    )
+}
+    return(!IsLoad
+            ?<>
+            <Grid container spacing={1} >
+                <Grid item sm={12} md={5} lg={4} spacing={1} container  direction="column" >
+                    <Grid item >
+                        <Paper square elevation={2}>
+                            <Box className={classes.avatarBox}>
+                                <img src={MyPhoto} className={classes.avatar} alt=""/>
+                            </Box>
+                        </Paper>
+                        <Divider/>
+                    </Grid>
+                    <Grid item>
+                        {renderTable()}
+                    </Grid>
+                </Grid>
+                <Grid item sm={12} md={7} lg={8} container spacing={1}  direction="column">
+                    <Grid item >
+                         <Paper elevation={2} square>
+                            <Box p={4}>
+                                <Container disableGutters>
+                                    <Typography variant="h4" gutterBottom>
+                                        About Me
+                                    </Typography>
+                                    
+                                </Container>
+                                <Container disableGutters>
+                                    {createAboutMe()}
+                                </Container>
+                            
+                            </Box>
+                    </Paper>
+                    </Grid>
+                   <Grid item>
+                       <Paper elevation={2} square >
+                           <Box p={4}>
+                                <Container disableGutters>
+                                    <Typography variant="h4" gutterBottom >
+                                        Contacts
+                                    </Typography>
+                                </Container>
+                                <Container disableGutters>
+                                        {renderContacts()}
+                                </Container>
+                           </Box>
+                       </Paper>
+                   </Grid>                    
+                </Grid>
+            </Grid>
+            </>
+            :null          
+        )
+    
+}
+
+const mapStateToProps = store =>({
+    ...store.main,
+    ...store.home,
+    
+})
+    
+        
+    
+
+
+export default connect(mapStateToProps)(HomePageComponent)

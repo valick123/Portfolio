@@ -25,7 +25,7 @@ const optimization = ()=>{
     return config
 }
 
-const fileName = (ext,dir) => isDev? `${dir}[name].${ext}`: `${dir}[name].[hash].${ext}`
+const fileName = (ext) => isDev? `[name].${ext}`: `[name].[hash].${ext}`
 
 const cssLoaders = (addition)=>{
     const loaders = [
@@ -58,7 +58,7 @@ module.exports= {
         index:['@babel/polyfill','./src/js/index.js']
     },
     output:{
-        filename:fileName('js','js/'),
+        filename:fileName('js'),
         path: path.resolve(__dirname, 'dist')
     },
     optimization:optimization(),
@@ -75,16 +75,8 @@ module.exports= {
             }
         }),
         new CleanWebpackPlugin(),
-        // new CopyWbpackPlugin({
-        //     patterns:[
-        //         {
-        //             from:path.resolve(__dirname, './src/img/favicon.ico'),
-        //             to:path.resolve(__dirname, 'dist')
-        //         }
-        //     ]
-        // }),
         new MiniCssExtractPlugin({
-            filename:fileName('css','css/')
+            filename:fileName('css')
         })
     ],
     module:{
@@ -126,12 +118,9 @@ module.exports= {
                 use:cssLoaders('sass-loader')  
                },
             {
-                test:/\.(png|jprg|svg|gif)$/i,
+                test:/\.(png|jprg|svg|gif|jpg)$/i,
                 use:[{
                     loader:'file-loader',
-                    options:{
-                       outputPath:'img'
-                   }
                 }]
             },
             {
@@ -140,12 +129,11 @@ module.exports= {
             },
             {
                 test:/\.(ttf|woff|woff2)$/i,
-                use:[{
-                    loader:'file-loader',
-                    options:{
-                        outputPath:'fonts'
+                use:[
+                    {
+                        loader:'file-loader',
                     }
-                }]
+            ]
             }
         ]
     }
