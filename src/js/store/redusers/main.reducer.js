@@ -1,5 +1,7 @@
 const initialState ={
-    isLoad:true
+    isLoad:true,
+    themeMode:true,
+    dbAdress:"http://192.168.100.4:3000",
 }
 export const mainReducer = (state = initialState, action) =>{
     switch(action.type){
@@ -8,6 +10,9 @@ export const mainReducer = (state = initialState, action) =>{
         }
         case "DATA_LOADED":{
             return {...state, isLoad:false}
+        }
+        case "CHANGE_THEME_MODE":{
+            return {...state, themeMode:!state.themeMode}
         }
         default:{
             return state

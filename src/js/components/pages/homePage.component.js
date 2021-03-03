@@ -5,7 +5,8 @@ import { makeStyles} from "@material-ui/core/styles"
 import {connect} from 'react-redux';
 import Iframe from 'react-iframe';
 import PhoneIcon from '@material-ui/icons/Phone';
-import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
+import EmailIcon from '@material-ui/icons/Email';
+import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {fab} from "@fortawesome/free-brands-svg-icons"
 import {library} from '@fortawesome/fontawesome-svg-core';
@@ -26,10 +27,10 @@ const useStyles = makeStyles(theme =>({
         paddingBottom:theme.spacing(2),
     },
     tHead:{
-        backgroundColor:theme.palette.primary.dark,
+        backgroundColor:theme.palette.secondary.main,
     },
     tHeadText:{
-        color:theme.palette.primary.contrastText,
+        color:theme.palette.secondary.contrastText,
     },
     map:{
         width:"100%",
@@ -73,24 +74,24 @@ const useStyles = makeStyles(theme =>({
             props.dispatch({
                 type:"DATA_LOADING"
             })
+            resolve()
         })
-       .then(
-            fetch("http://localhost:3000/myInfo")
-            .then(responce => responce.json())
-            .then(data=> {
-                return props.dispatch({
-                    type:"INIT",
-                    payload:data
-                    })
-                }
-            )
-            .then(()=>{
-                setIsLoad(false)
-                props.dispatch({
-                    type:"DATA_LOADED"
+        .then(() =>{
+            return fetch(`${props.dbAdress}/myInfo`)
+        })
+        .then(responce => responce.json())
+        .then(data=> {
+            return props.dispatch({
+                type:"INIT",
+                payload:data
                 })
             })
-        )
+        .then(()=>{
+            setIsLoad(false)
+                props.dispatch({
+                type:"DATA_LOADED"
+            })
+        })
         
     },[])
 
@@ -212,7 +213,7 @@ const createSocialLinks = () =>{
                         props.personalInfo.socials.map((item,index)=>{
                             const {link, icon} = item;
                             return (
-                                <Button key={index} href={link} className={classes.grow} >
+                                <Button key={index} href={link} className={classes.grow} target="_blank">
                                     <FontAwesomeIcon icon={["fab",icon]} size="lg"/>
                                 </Button>
                             )
@@ -262,7 +263,7 @@ const renderContacts = () =>{
                 </Typography>
                 <Button 
                     href={`mailto:${props.personalInfo.Email}`}
-                    startIcon={<AlternateEmailIcon />}
+                    startIcon={<EmailIcon />}
                     color="secondary"
                     variant="contained"
                     size="small"
@@ -292,6 +293,22 @@ const renderContacts = () =>{
                 </Typography>
                 {createSocialLinks()}
             </Box>
+            <Box marginBottom={2}>
+                <Typography variant="h6" gutterBottom>
+                    Resume:
+                </Typography> 
+                <Button
+                    href={props.personalInfo.resumeLink}
+                    startIcon={<AssignmentIndIcon />}
+                    color="secondary"
+                    variant="contained"
+                    size="small"
+                    className={classes.fullWidthBtn}
+                    target="_blank"
+                >
+                    Resume
+                </Button>
+            </Box>
             <Box >
                 <Typography variant="h6" gutterBottom>
                     Location:
@@ -308,8 +325,7 @@ const renderContacts = () =>{
         </>
     )
 }
-    return(!IsLoad
-            ?<>
+    return(!IsLoad?<>
             <Grid container spacing={1} >
                 <Grid item sm={12} md={5} lg={4} spacing={1} container  direction="column" >
                     <Grid item >

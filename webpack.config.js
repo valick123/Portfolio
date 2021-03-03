@@ -66,6 +66,8 @@ module.exports= {
         port:4001,
         hot: isDev,
         historyApiFallback: true,
+        disableHostCheck:true,
+        host:"192.168.100.4"
     },
     plugins:[
         new HTMLWebpackPlugin({

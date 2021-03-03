@@ -50,9 +50,14 @@
                 "flag":""
             },
             {
+                "text":"At the moment, I am improving my knowledge in: Angular 11 and algorithms.",
+                "flag":""
+            },  
+            {
                 "text":"I have an ability to redistribute.",
                 "flag":"strong"
-            }    
+            }
+              
         ],
         "Email":"valentin3840@gmail.com",
         "socials":[
@@ -72,9 +77,11 @@
                 "icon":"viber"
             }
         ],
-        "phoneNumber":"+375 (29) 384-02-62"
+        "phoneNumber":"+375 (29) 384-02-62",
+        "resumeLink":"https://rabota.by/resume/29effc85ff05f63d9f0039ed1f436532365a61"
     },
     "gallery":{
         "test":"DONE"
     }
+    
 }

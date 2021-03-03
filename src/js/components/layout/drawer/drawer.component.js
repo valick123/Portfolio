@@ -11,6 +11,9 @@ import Iframe from "react-iframe";
 const useStyle = makeStyles(theme=>( {
     menuList:{
         minWidth:"250px",
+        [theme.breakpoints.down("sm")]:{
+            width:"100vw"
+        }
     },
     drawerHeader: {
         display: 'flex',
@@ -25,8 +28,10 @@ const useStyle = makeStyles(theme=>( {
         width:"100%",
         border:"none",
         ...theme.shape,
-        
-}
+    },
+    drawer:{
+        maxHeight:"100vh",
+    }
 }))
 
 const DrawerMenu = props =>{
@@ -64,7 +69,7 @@ const DrawerMenu = props =>{
     return(
         <>
             <Hidden implementation="css" smDown>
-                <Drawer open={props.isOpenMenuLeft} onClose={props.toggleMenuLeft}>                        
+                <Drawer className={classes.drawer} open={props.isOpenMenuLeft} onClose={props.toggleMenuLeft}>                        
                     <Box className={classes.drawerHeader}>
                                 <IconButton onClick={props.toggleMenuLeft}>
                                 <ArrowBackIcon/>
@@ -77,7 +82,7 @@ const DrawerMenu = props =>{
                 </Drawer> 
             </Hidden>   
             <Hidden  implementation="css" mdUp>
-                  <Drawer anchor="bottom" open={props.isOpenMenuBottom} onClose={props.toggleMenuBottom}>                        
+                  <Drawer className={classes.drawer} anchor="bottom" open={props.isOpenMenuBottom} onClose={props.toggleMenuBottom}>                        
                             <Box className={classes.drawerHeader}>
                                 <IconButton onClick={props.toggleMenuBottom}>
                                 <ArrowDownwardIcon/>
