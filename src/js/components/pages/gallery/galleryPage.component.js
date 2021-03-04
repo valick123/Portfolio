@@ -56,13 +56,13 @@ const GalleryPageComponent = props =>{
                     React
                 </Typography>
                 <Grid container spacing={1}>
-                    <Grid item xs={12} sm={6} md={4}>
+                    <Grid item xs={12} sm={6} md={4} xl={3}>
                         <GalleryCard thumbnail={`https://picsum.photos/200/300/?blur&random=1`} />
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
+                    <Grid item xs={12} sm={6} md={4} xl={3}>
                         <GalleryCard thumbnail={`https://picsum.photos/200/300/?blur&random=1`} />
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
+                    <Grid item xs={12} sm={6} md={4} xl={3}>
                         <GalleryCard thumbnail={`https://picsum.photos/200/300/?blur&random=1`} />
                     </Grid>
                 </Grid>
@@ -72,13 +72,13 @@ const GalleryPageComponent = props =>{
                     Angular
                 </Typography>
                 <Grid container spacing={1}>
-                    <Grid item xs={12} sm={6} md={4}>
+                    <Grid item xs={12} sm={6} md={4} xl={3}>
                         <GalleryCard thumbnail={`https://picsum.photos/200/300/?blur&random=1`} />
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
+                    <Grid item xs={12} sm={6} md={4} xl={3}>
                         <GalleryCard thumbnail={`https://picsum.photos/200/300/?blur&random=1`} />
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
+                    <Grid item xs={12} sm={6} md={4} xl={3}>
                         <GalleryCard thumbnail={`https://picsum.photos/200/300/?blur&random=1`} />
                     </Grid>
                 </Grid>
@@ -88,13 +88,13 @@ const GalleryPageComponent = props =>{
                     Vue
                 </Typography>
                 <Grid container spacing={1}>
-                    <Grid item xs={12} sm={6} md={4}>
+                    <Grid item xs={12} sm={6} md={4} xl={3}>
                         <GalleryCard thumbnail={`https://picsum.photos/200/300/?blur&random=1`} />
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
+                    <Grid item xs={12} sm={6} md={4} xl={3}>
                         <GalleryCard thumbnail={`https://picsum.photos/200/300/?blur&random=1`} />
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
+                    <Grid item xs={12} sm={6} md={4} xl={3}>
                         <GalleryCard thumbnail={`https://picsum.photos/200/300/?blur&random=1`} />
                     </Grid>
                 </Grid>
