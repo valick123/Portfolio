@@ -15,8 +15,8 @@ const useStyles = makeStyles(theme => ({
 
 
 const GalleryPageComponent = props =>{
-    const classes = useStyles();
-    const [IsLoad, setIsLoad] = React.useState(true)
+const classes = useStyles();
+const [IsLoad, setIsLoad] = React.useState(true)
 
     
   useEffect(()=>{
@@ -48,58 +48,34 @@ const GalleryPageComponent = props =>{
         })
     
 },[])
+
+const renderGallery = () =>{
+    return Object.keys(props.gallery).map((rowName,indexRow)=>{
+        return (props.gallery[rowName].length
+        ?<Box p={1} key={indexRow}>
+            <Typography variant="h5" gutterBottom>
+                {`${rowName[0].toUpperCase()}${rowName.slice(1)}`}
+            </Typography>
+            <Grid container spacing={1}>
+                    {
+                        props.gallery[rowName].map(item=>{
+                            return (
+                                <Grid item xs={12} sm={6} md={4} xl={3} key={item.id}>
+                                    {
+                                        <GalleryCard info={item} />
+                                    }
+                                </Grid>
+                            )
+                        })
+                    }
+            </Grid>
+        </Box>
+        :null)
+    })
+}
     return (
         !IsLoad
-        ?<>            
-            <Box p={1}>
-                <Typography variant="h5" gutterBottom>
-                    React
-                </Typography>
-                <Grid container spacing={1}>
-                    <Grid item xs={12} sm={6} md={4} xl={3}>
-                        <GalleryCard thumbnail={`https://picsum.photos/200/300/?blur&random=1`} />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4} xl={3}>
-                        <GalleryCard thumbnail={`https://picsum.photos/200/300/?blur&random=1`} />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4} xl={3}>
-                        <GalleryCard thumbnail={`https://picsum.photos/200/300/?blur&random=1`} />
-                    </Grid>
-                </Grid>
-            </Box>
-            <Box p={1}>
-                <Typography variant="h5" gutterBottom>
-                    Angular
-                </Typography>
-                <Grid container spacing={1}>
-                    <Grid item xs={12} sm={6} md={4} xl={3}>
-                        <GalleryCard thumbnail={`https://picsum.photos/200/300/?blur&random=1`} />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4} xl={3}>
-                        <GalleryCard thumbnail={`https://picsum.photos/200/300/?blur&random=1`} />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4} xl={3}>
-                        <GalleryCard thumbnail={`https://picsum.photos/200/300/?blur&random=1`} />
-                    </Grid>
-                </Grid>
-            </Box>
-            <Box p={1}>
-                <Typography variant="h5" gutterBottom>
-                    Vue
-                </Typography>
-                <Grid container spacing={1}>
-                    <Grid item xs={12} sm={6} md={4} xl={3}>
-                        <GalleryCard thumbnail={`https://picsum.photos/200/300/?blur&random=1`} />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4} xl={3}>
-                        <GalleryCard thumbnail={`https://picsum.photos/200/300/?blur&random=1`} />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4} xl={3}>
-                        <GalleryCard thumbnail={`https://picsum.photos/200/300/?blur&random=1`} />
-                    </Grid>
-                </Grid>
-            </Box>
-        </>
+        ?renderGallery()       
         :null
         
         )
@@ -109,7 +85,7 @@ const GalleryPageComponent = props =>{
 const mapStateToProps = store =>{
   return {
     ...store.main,
-    ...store.gallery
+    gallery:store.gallery
   }
 }
 

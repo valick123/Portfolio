@@ -1,9 +1,11 @@
 import React from "react";
 import {Typography, Card,CardActionArea,CardActions,CardContent,CardMedia, Button, makeStyles} from "@material-ui/core";
 
-const useStyles = makeStyles(theme =>{
-
-})
+const useStyles = makeStyles(theme =>({
+    media:{
+        minHeight:200
+    }
+}))
 
 export const GalleryCard = props =>{
 
@@ -11,27 +13,24 @@ export const GalleryCard = props =>{
 
     return(
         <Card>
-            <CardActionArea href={props.href}>
+            <CardActionArea href={props.info.siteLink} target="_blank">
                 <CardMedia
                     className={classes.media}
-                    image={props.thumbnail}
+                    image={props.info.thumbnailLink}
                     title="Contemplative Reptile"
-                    style={{
-                        height:200
-                    }}
+                    
                 />
                 <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
-                    Lizard
+                    {props.info.name}
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except Antarctica
+                    {props.info.description}
                 </Typography>
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" color="secondary">
+                <Button size="small" color="secondary" href={props.info.siteLink} target="_blank" >
                     Learn More
                 </Button>
             </CardActions>

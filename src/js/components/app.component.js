@@ -50,7 +50,7 @@ const useStyles = makeStyles(theme => ({
         return(
             <MuiThemeProvider theme={props.themeMode?darkTheme:lightTheme}>
                 <CssBaseline/>
-                <Router>
+                <Router >
                     
                     <Box className={classes.mainBox} > 
                     <Grid container direction="column" className={classes.grow} >

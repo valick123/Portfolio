@@ -80,8 +80,15 @@
         "phoneNumber":"+375 (29) 384-02-62",
         "resumeLink":"https://rabota.by/resume/29effc85ff05f63d9f0039ed1f436532365a61"
     },
-    "gallery":{
-        "test":"DONE"
-    }
+    "gallery":[
+        {
+            "id":1,
+            "framework":"React",
+            "name":"Minto",
+            "description":"A minimal Web Design from cssauthor.com",
+            "thumbnailLink":"https://raw.githubusercontent.com/valick123/MyMintoEXP/gh-pages/Thumbnail.png",
+            "siteLink":"https://valick123.github.io/MyMintoEXP/"
+        }
+    ]
     
 }
