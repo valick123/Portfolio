@@ -6,5 +6,13 @@
         "description":"A minimal Web Design from cssauthor.com",
         "thumbnailLink":"https://raw.githubusercontent.com/valick123/MyMintoEXP/gh-pages/Thumbnail.png",
         "siteLink":"https://valick123.github.io/MyMintoEXP/"
+    },
+    {
+        "id":2,
+        "framework":"VanilaJS",
+        "name":"Jetro",
+        "description":"Jetro company website.",
+        "thumbnailLink":"https://raw.githubusercontent.com/valick123/MyJetroEXP/gh-pages/Thumbnail.png",
+        "siteLink":"https://valick123.github.io/MyJetroEXP/"
     }
 ]
