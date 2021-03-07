@@ -1,0 +1,10 @@
+[
+    {
+        "id":1,
+        "framework":"React",
+        "name":"Minto",
+        "description":"A minimal Web Design from cssauthor.com",
+        "thumbnailLink":"https://raw.githubusercontent.com/valick123/MyMintoEXP/gh-pages/Thumbnail.png",
+        "siteLink":"https://valick123.github.io/MyMintoEXP/"
+    }
+]
