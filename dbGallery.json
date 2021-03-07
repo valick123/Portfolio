@@ -9,7 +9,7 @@
     },
     {
         "id":2,
-        "framework":"VanilaJS",
+        "framework":"VanillaJS",
         "name":"Jetro",
         "description":"Jetro company website.",
         "thumbnailLink":"https://raw.githubusercontent.com/valick123/MyJetroEXP/gh-pages/Thumbnail.png",
