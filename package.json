@@ -1,12 +1,15 @@
 {
+  "homepage": "http://valick123.github.io/PortfolioTest/",
   "name": "start_set",
   "version": "1.3.0",
   "description": "START_SET",
   "private": "true",
   "scripts": {
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d dist",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --mode development | json-server --watch db/dataBase.json --host 192.168.100.4",
     "build": "cross-env NODE_ENV=production webpack --mode production",
-    "db":"json-server --watch db/dataBase.json --host 192.168.100.4"
+    "db": "json-server --watch db/dataBase.json --host 192.168.100.4"
   },
   "browserslist": ">0.25%, not dead",
   "author": "",
@@ -52,6 +55,7 @@
     "@material-ui/styles": "^4.11.3",
     "bootstrap": "^4.6.0",
     "fontsource-roboto": "^4.0.0",
+    "gh-pages": "^3.1.0",
     "jquery": "^3.5.1",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
