@@ -14,5 +14,13 @@
         "description":"Jetro company website.",
         "thumbnailLink":"https://raw.githubusercontent.com/valick123/MyJetroEXP/gh-pages/Thumbnail.png",
         "siteLink":"https://valick123.github.io/MyJetroEXP/"
+    },
+    {
+        "id":3,
+        "framework":"Angular",
+        "name":"Insto",
+        "description":"New instagram generation;)",
+        "thumbnailLink":"https://raw.githubusercontent.com/valick123/MyInstEXP/gh-pages/Thumbnail.jpg",
+        "siteLink":"https://valick123.github.io/MyInstEXP/"
     }
 ]
