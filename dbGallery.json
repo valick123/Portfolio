@@ -27,7 +27,7 @@
         "id":4,
         "framework":"React",
         "name":"Post and Url's",
-        "description":"This srevice allows you to search posts by keywords and by existing URL's. Just enter you request or paste your link here, choose necessary sourse and click the button.",
+        "description":"This srevice allows you to search posts by keywords and by existing URL's.",
         "thumbnailLink":"https://raw.githubusercontent.com/valick123/MyYouTubeApiExamEXP/gh-pages/Thumbnail.jpg",
         "siteLink":"https://valick123.github.io/MyYouTubeApiExamEXP/"
     }
