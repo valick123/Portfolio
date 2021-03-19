@@ -1,0 +1,118 @@
+{
+    "myInfo":{
+        "name":"Valentin",
+        "surname":"Waevoda",
+        "gender":"Male",
+        "age":22,
+        "education":[
+            {
+                "place":"The Belarusian State University of Informatics and Radioelectronics",
+                "period":"2016-2020"
+            },
+            {
+                "place":"Minsk Secondary school #147",
+                "period":"2005-2016"
+            },
+            {
+                "place":"ITStep Academy Front-end Web-development course",
+                "period":"2017-2018,2020-2021"
+            }
+        ],
+        "skills":[
+            "HTML5",
+            "CSS3",
+            "JavaScript",
+            "Git",
+            "Gulp",
+            "Webpack",
+            "React",
+            "React-router",
+            "Redux",
+            "Angular 11",
+            "RxJS"
+
+        ],
+        "aboutMe":[
+            {
+                "text":"A passionate web developer who is eager to learn.I'm hardworking, diligent,and dedicated-all qualities I put forward in everything I do.Ready to develop new skills, create mesmerizing user experiances.",                
+                "flag":""
+            },
+            {
+                "text":"In turn, I would offer my full commitment, develop functional user interfaces and be a friendly addition to your team.",
+                "":""
+            },
+            {
+                "text":"Looking for a job as a frontend developer. For me, first of all, experience and a friendly team are important",
+                "flag":""
+            },
+            {
+                "text":"I have completed a Front-end Web-development course at the ITStep Academy in 2021. I have a certificate. Currently working out the distribution in Research Institute of electronic computer machines (NIIEVM).",
+                "flag":""
+            },
+            {
+                "text":"At the moment, I am improving my knowledge in: Angular 11 and algorithms.",
+                "flag":""
+            },  
+            {
+                "text":"I have an ability to redistribute.",
+                "flag":"strong"
+            }
+              
+        ],
+        "Email":"valentin3840@gmail.com",
+        "socials":[
+            {
+                "name":"Vk",
+                "link":"https://vk.com/valick123",
+                "icon":"vk"
+            },
+            {
+                "name":"Telegram",
+                "link":"https://t.me/Valick123",
+                "icon":"telegram-plane"
+            },
+            {
+                "name":"Viber",
+                "link":"viber://chat?number=+375293840262",
+                "icon":"viber"
+            }
+        ],
+        "phoneNumber":"+375 (29) 384-02-62",
+        "resumeLink":"https://rabota.by/resume/29effc85ff05f63d9f0039ed1f436532365a61"
+    },
+    "gallery":[
+        {
+            "id":1,
+            "framework":"React",
+            "name":"Minto",
+            "description":"A minimal Web Design from cssauthor.com",
+            "thumbnailLink":"https://raw.githubusercontent.com/valick123/MyMintoEXP/gh-pages/Thumbnail.png",
+            "siteLink":"https://valick123.github.io/MyMintoEXP/"
+        },
+        {
+            "id":2,
+            "framework":"VanillaJS",
+            "name":"Jetro",
+            "description":"Jetro company website.",
+            "thumbnailLink":"https://raw.githubusercontent.com/valick123/MyJetroEXP/gh-pages/Thumbnail.png",
+            "siteLink":"https://valick123.github.io/MyJetroEXP/"
+        },
+        {
+            "id":3,
+            "framework":"Angular",
+            "name":"Insto",
+            "description":"New instagram generation;)",
+            "thumbnailLink":"https://picsum.photos/id/1073/400",
+            "siteLink":"https://valick123.github.io/MyInstEXP/"
+        },
+        {
+            "id":4,
+            "framework":"React",
+            "name":"Post and Url's",
+            "description":"This srevice allows you to search posts by keywords and by existing URL's.",
+            "thumbnailLink":"https://raw.githubusercontent.com/valick123/MyYouTubeApiExamEXP/gh-pages/Thumbnail.jpg",
+            "siteLink":"https://valick123.github.io/MyYouTubeApiExamEXP/"
+        }
+    ]
+    
+}
