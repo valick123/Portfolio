@@ -88,6 +88,30 @@
             "description":"A minimal Web Design from cssauthor.com",
             "thumbnailLink":"https://raw.githubusercontent.com/valick123/MyMintoEXP/gh-pages/Thumbnail.png",
             "siteLink":"https://valick123.github.io/MyMintoEXP/"
+        },
+        {
+            "id":2,
+            "framework":"VanillaJS",
+            "name":"Jetro",
+            "description":"Jetro company website.",
+            "thumbnailLink":"https://raw.githubusercontent.com/valick123/MyJetroEXP/gh-pages/Thumbnail.png",
+            "siteLink":"https://valick123.github.io/MyJetroEXP/"
+        },
+        {
+            "id":3,
+            "framework":"Angular",
+            "name":"Insto",
+            "description":"New instagram generation;)",
+            "thumbnailLink":"https://picsum.photos/id/1073/400",
+            "siteLink":"https://valick123.github.io/MyInstEXP/"
+        },
+        {
+            "id":4,
+            "framework":"React",
+            "name":"Post and Url's",
+            "description":"This srevice allows you to search posts by keywords and by existing URL's.",
+            "thumbnailLink":"https://raw.githubusercontent.com/valick123/MyYouTubeApiExamEXP/gh-pages/Thumbnail.jpg",
+            "siteLink":"https://valick123.github.io/MyYouTubeApiExamEXP/"
         }
     ]
     

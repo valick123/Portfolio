@@ -1,7 +1,7 @@
 const initialState ={
     isLoad:true,
     themeMode:true,
-    dbAdress:"http://192.168.100.4:3000",
+    dbAdress:"http://192.168.82.43:3000",
 }
 export const mainReducer = (state = initialState, action) =>{
     switch(action.type){

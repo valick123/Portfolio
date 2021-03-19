@@ -67,7 +67,7 @@ module.exports= {
         hot: isDev,
         historyApiFallback: true,
         disableHostCheck:true,
-        host:"192.168.100.4"
+        host:"192.168.82.43"
     },
     plugins:[
         new HTMLWebpackPlugin({

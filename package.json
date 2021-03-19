@@ -7,9 +7,9 @@
   "scripts": {
     "predeploy":"npm run build",
     "deploy":"gh-pages -d dist",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --mode development | json-server --watch db/dataBase.json --host 192.168.100.4",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --mode development | json-server --watch db/dataBase.json --host 192.168.82.43",
     "build": "cross-env NODE_ENV=production webpack --mode production",
-    "db": "json-server --watch db/dataBase.json --host 192.168.100.4"
+    "db": "json-server --watch db/dataBase.json --host 192.168.82.43"
   },
   "browserslist": ">0.25%, not dead",
   "author": "",

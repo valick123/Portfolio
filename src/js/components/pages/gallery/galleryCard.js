@@ -4,6 +4,14 @@ import {Typography, Card,CardActionArea,CardActions,CardContent,CardMedia, Butto
 const useStyles = makeStyles(theme =>({
     media:{
         minHeight:200
+    },
+    cardFlex:{
+        display:"flex",
+        flexDirection:"column",        
+        height:"100%",
+    },
+    grow:{
+        flexGrow:1
     }
 }))
 
@@ -12,8 +20,8 @@ export const GalleryCard = props =>{
     const classes = useStyles()
 
     return(
-        <Card>
-            <CardActionArea href={props.info.siteLink} target="_blank">
+        <Card className={classes.cardFlex} > 
+            <CardActionArea className={classes.grow} href={props.info.siteLink} target="_blank">
                 <CardMedia
                     className={classes.media}
                     image={props.info.thumbnailLink}
